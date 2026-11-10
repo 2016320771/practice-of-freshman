@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于本站 · wsn032 | 樊振东个人介绍</title>
+<meta name="description" content="《新生实践课》网页设计作业说明：站点结构、制作技术、素材来源与文件大小统计。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">樊振东 <span>Fan Zhendong</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">目录</button>
+    <nav class="site-nav" id="site-nav" aria-label="主导航">
+      <ul>
+        <li><a href="../index.html">主页</a></li>
+        <li><a href="profile.html">人物档案</a></li>
+        <li><a href="career.html">职业生涯</a></li>
+        <li><a href="honors.html">荣誉成绩</a></li>
+        <li><a href="germany.html">留洋德甲</a></li>
+        <li><a href="photos.html">影像纪实</a></li>
+        <li><a href="about.html" aria-current="page">关于本站</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-head">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="../index.html">主页</a> / 关于本站</p>
+      <p class="eyebrow">Colophon · 06</p>
+      <h1>关于本站</h1>
+      <p class="lead">这是一个课程作业：主题自选，用 Dreamweaver 及相关工具完成个人网页的设计与实现。主题选的是樊振东——一个把“稳”打到极致的运动员。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Structure</p>
+          <h2>站点结构</h2>
+        </div>
+        <p class="caption muted" style="margin:0">根目录放主页，其余页面统一放在 web 文件夹</p>
+      </div>
+
+      <table class="data reveal">
+        <caption>目录结构与页面清单</caption>
+        <thead>
+          <tr><th scope="col">路径</th><th scope="col">类型</th><th scope="col">说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">wsn032/index.html</td><td>主页</td><td>首屏、关键数据、六个栏目入口</td></tr>
+          <tr><td class="num">wsn032/web/profile.html</td><td>分页面</td><td>人物档案</td></tr>
+          <tr><td class="num">wsn032/web/career.html</td><td>分页面</td><td>职业生涯时间线</td></tr>
+          <tr><td class="num">wsn032/web/honors.html</td><td>分页面</td><td>荣誉成绩</td></tr>
+          <tr><td class="num">wsn032/web/germany.html</td><td>分页面</td><td>留洋德甲</td></tr>
+          <tr><td class="num">wsn032/web/photos.html</td><td>分页面</td><td>影像纪实</td></tr>
+          <tr><td class="num">wsn032/web/about.html</td><td>分页面</td><td>关于本站（当前页）</td></tr>
+          <tr><td class="num">wsn032/web/style.css</td><td>样式</td><td>全站共享样式</td></tr>
+          <tr><td class="num">wsn032/web/main.js</td><td>脚本</td><td>移动端导航、图片放大、滚动显现</td></tr>
+          <tr><td class="num">wsn032/image/</td><td>素材</td><td>全部图片，约 1MB 以内</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section-tight" data-component="technique">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Technique</p>
+          <h2>用到的技术</h2>
+        </div>
+      </div>
+
+      <ul class="tech-list reveal" data-component="tech-list">
+        <li>
+          <h3>HTML5 语义化结构</h3>
+          <p>使用 header / nav / main / section / figure / footer 组织内容，标题层级严格按 h1→h2→h3 递进，便于阅读也便于屏幕阅读器识别。</p>
+        </li>
+        <li>
+          <h3>CSS3 变量与响应式</h3>
+          <p>配色、间距、字体统一用 CSS 自定义属性管理；字号用 clamp() 流体缩放，栅格用 grid 的 auto-fit 自动换行，手机端不出现横向滚动。</p>
+        </li>
+        <li>
+          <h3>相对路径互链</h3>
+          <p>主页在根目录，分页面在 web 目录，图片在 image 目录。跨目录引用统一用 ../ 回退，整包拷贝到任意磁盘位置都能正常打开。</p>
+        </li>
+        <li>
+          <h3>原生 JavaScript 交互</h3>
+          <p>移动端折叠菜单、照片灯箱（支持 Esc 关闭）、滚动淡入显现。不依赖任何 JS 框架与外部 CDN。</p>
+        </li>
+        <li>
+          <h3>无障碍细节</h3>
+          <p>导航项用 aria-current 标记当前页，按钮带 aria-expanded，图片全部提供 alt 文本，焦点可见；同时支持 prefers-reduced-motion 减少动画。</p>
+        </li>
+        <li>
+          <h3>打印样式</h3>
+          <p>单独设置打印媒体查询，去掉导航与首屏大图、改为白底黑字，方便直接打印成纸质作业。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-tight" data-component="sources">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Sources</p>
+          <h2>内容与图片来源</h2>
+        </div>
+      </div>
+
+      <p>页面中的事实性内容（出生信息、赛事成绩、留洋经历等）依据下列公开报道整理，图片同样来自这些公开报道，仅用于课程作业展示，不作商业用途。</p>
+
+      <ol class="source-list" data-component="source-list" style="margin-top:var(--space-2)">
+        <li>新华社《樊振东加盟杜塞尔多夫乒乓球俱乐部》，2026 年 3 月 17 日</li>
+        <li>环球网《樊振东英文发言告别萨尔布吕肯：“我们永远都是朋友和家人”》</li>
+        <li>北京日报网《樊振东，亮相上海市运会》，2026 年 6 月 27 日</li>
+        <li>Olympics 官方运动员资料页 FAN Zhendong</li>
+        <li>搜狐体育关于福布斯中国 2026 年最具影响力华人精英榜单的报道，2026 年 10 月</li>
+      </ol>
+
+      <div class="note" style="margin-top:var(--space-3)">
+        <p><strong>说明</strong></p>
+        <p class="small">本站为原创页面，仅借鉴了体育人物报道类网站的通用版式思路，未复制任何现成页面的代码或模板。所有文案根据公开资料自行组织撰写。</p>
+      </div>
+
+      <p style="margin-top:var(--space-3)">
+        <a class="btn" href="../index.html">&larr; 返回主页</a>
+        <a class="btn" href="profile.html">从头再看：人物档案 &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>本站导航</h4>
+        <ul>
+          <li><a href="../index.html">主页</a></li>
+          <li><a href="profile.html">人物档案</a></li>
+          <li><a href="career.html">职业生涯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更多章节</h4>
+        <ul>
+          <li><a href="honors.html">荣誉成绩</a></li>
+          <li><a href="germany.html">留洋德甲</a></li>
+          <li><a href="photos.html">影像纪实</a></li>
+          <li><a href="about.html">关于本站</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>作业信息</h4>
+        <ul>
+          <li>课程：新生实践课</li>
+          <li>主文件夹：wsn032</li>
+          <li>当前页：web/about.html</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 wsn032 · 个人网页设计作业。页面内容据公开报道整理，仅用于课程学习。</span>
+      <span><a href="../index.html">返回主页</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
